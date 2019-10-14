@@ -2,7 +2,7 @@
     <div class="todo-container">
     <div class="todo-wrap">
         <TodoHeader/>
-        <TodoList/>
+        <TodoList :todos='todos'/>
         <TodoFooter/>  
     </div>
   </div>
@@ -14,6 +14,15 @@
     import TodoList from './components/TodoList'
 
     export default {
+        data(){
+            return {
+                todos:[
+                    {title:'吃饭',complete:false},
+                    {title:'睡觉',complete:false},
+                    {title:'亲佳佳',complete:true},
+                ]
+            }
+        },
         components:{
             TodoHeader,TodoFooter,TodoList 
         }

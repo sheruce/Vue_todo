@@ -1,13 +1,33 @@
 <template>
-  
+    <div class="todo-container">
+    <div class="todo-wrap">
+        <TodoHeader/>
+        <TodoList/>
+        <TodoFooter/>  
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
+    import TodoHeader from './components/TodoHeader'
+    import TodoFooter from './components/TodoFooter'
+    import TodoList from './components/TodoList'
 
-}
+    export default {
+        components:{
+            TodoHeader,TodoFooter,TodoList 
+        }
+    }
 </script>
 
 <style>
-
+.todo-container {
+  width: 600px;
+  margin: 0 auto;
+}
+.todo-container .todo-wrap {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
 </style>

@@ -34,7 +34,7 @@
         },
         deleteItem(){
           const {todo,index,deleteTodo}=this
-          if(window.confirm('确认删除'+todo.title+'嘛?')){
+          if(window.confirm(`确认删除${todo.title}嘛?`)){
             deleteTodo(index)
           }
         }

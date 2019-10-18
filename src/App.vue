@@ -17,11 +17,7 @@
     export default {
         data(){
             return {
-                todos:[
-                    {title:'吃饭',complete:false},
-                    {title:'睡觉',complete:false},
-                    {title:'亲佳佳',complete:true},
-                ]
+                todos:JSON.parse(window.localStorage.getItem('todos_key') || '[]')
             }
         },
         methods:{
@@ -36,6 +32,14 @@
             },
             selectAllTodos(check){
                 this.todos.forEach(todo => todo.complete = check)
+            }
+        },
+        watch:{
+            todos:{
+                deep:true,
+                handler:function(value){
+                    window.localStorage.setItem('todos_key',JSON.stringify(value))
+                }
             }
         },
         components:{
